@@ -6,17 +6,30 @@ import pandas as pd
 import pickle
 
 # load the trained model
+## model = tf.keras.models.load_model(
+##     r"C:\Deep Learning\ANN Classification\model.h5"
+## )
 model = tf.keras.models.load_model(
-    r"C:\Deep Learning\ANN Classification\model.h5"
+    "model.h5"
 )
+
 ## load the encoder and scalar
-with open(r"C:\Deep Learning\ANN Classification\label_encoder_gender.pkl","rb") as file:
+## with open(r"C:\Deep Learning\ANN Classification\label_encoder_gender.pkl","rb") as file:
+##     label_encoder_gender = pickle.load(file)
+
+with open("label_encoder_gender.pkl","rb") as file:
     label_encoder_gender = pickle.load(file)
 
-with open(r"C:\Deep Learning\ANN Classification\onehot_encoder_geo.pkl","rb") as file:
+## with open(r"C:\Deep Learning\ANN Classification\onehot_encoder_geo.pkl","rb") as file:
+##     onehot_encoder_geo = pickle.load(file)
+
+with open("onehot_encoder_geo.pkl","rb") as file:
     onehot_encoder_geo = pickle.load(file)
 
-with open(r"C:\Deep Learning\ANN Classification\scaler.pkl","rb") as file:
+## with open(r"C:\Deep Learning\ANN Classification\scaler.pkl","rb") as file:
+##    scaler = pickle.load(file)
+
+with open("scaler.pkl","rb") as file:
     scaler = pickle.load(file)
 
 ## streamlit app
